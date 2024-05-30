@@ -32,7 +32,7 @@ pipeline {
             steps {
                 echo 'Building artifact'
                 sleep 20
-                ls -lha
+                bat 'dir'
             }
         }
         stage("Deploy") {
