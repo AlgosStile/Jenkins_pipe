@@ -58,15 +58,15 @@ pipeline {
 
     }
     post {
-        success {
-            mail to: 'team-company@mail.ru',
-            subject: "Completed Pipeline: ${currentBuild.fullDisplayName}",
-            body: "Your build completed, please check: ${env.BUILD_URL}"
-        }
-        failure {
-            mail to: 'team-company@example.ru',
-            subject: "Failure project - Jenkins Pipeline: ${currentBuild.fullDisplayName}",
-            body: "Your build FAILED, please check: ${env.BUILD_URL}"
+            success {
+                mail to: 'correct-email@example.com',
+                subject: "Completed Pipeline: ${currentBuild.fullDisplayName}",
+                body: "Your build completed, please check: ${env.BUILD_URL}"
+            }
+            failure {
+                mail to: 'correct-email@example.com',
+                subject: "Failure project - Jenkins Pipeline: ${currentBuild.fullDisplayName}",
+                body: "Your build FAILED, please check: ${env.BUILD_URL}"
+            }
         }
     }
-}
