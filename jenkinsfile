@@ -31,7 +31,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo 'Building artifact'
-                sleep 10
+                sleep 20
                 sh 'ls -lha'
             }
         }
